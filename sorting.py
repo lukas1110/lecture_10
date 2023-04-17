@@ -21,9 +21,21 @@ def read_data(file_name):
                     data[head].append(int(value))
     return data
 
+def selection_sort(array):
+    for ind in range(len(array)):
+        min_index = ind
+
+        for j in range(ind + 1, len(array)):
+            if array[j] < array[min_index]:
+                min_index = j
+        (array[ind], array[min_index]) = (array[min_index], array[ind])
+    return array
+
 def main():
     my_data = read_data("numbers.csv")
-    # print(my_data)
+    print(my_data["series_1"])
+    sorted_data = selection_sort(my_data["series_1"])
+    print(sorted_data)
     pass
 
 
