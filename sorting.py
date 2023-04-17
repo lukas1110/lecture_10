@@ -23,7 +23,7 @@ def read_data(file_name):
 
 def main():
     my_data = read_data("numbers.csv")
-    print(my_data)
+    # print(my_data)
     pass
 
 
