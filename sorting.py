@@ -21,7 +21,7 @@ def read_data(file_name):
                     data[head].append(int(value))
     return data
 
-def selection_sort(array):
+def selection_sort(array, direction):
     for ind in range(len(array)):
         min_index = ind
 
@@ -29,12 +29,18 @@ def selection_sort(array):
             if array[j] < array[min_index]:
                 min_index = j
         (array[ind], array[min_index]) = (array[min_index], array[ind])
-    return array
+    if direction == "asc":
+        return array
+    elif direction == "desc":
+        return array[::-1]
+    else:
+        return "Error in direction"
+
 
 def main():
     my_data = read_data("numbers.csv")
     print(my_data["series_1"])
-    sorted_data = selection_sort(my_data["series_1"])
+    sorted_data = selection_sort(my_data["series_1"], "asc")
     print(sorted_data)
     pass
 
